@@ -1,0 +1,8 @@
+- name: copy {{ component }} service file here
+  ansible.builtin.template: 
+    src: "{{ component }}.service.j2"       # .j2 is an extentions used for template
+    dest: /etc/systemd/system/{{ component }}.service
+
+- name: daemon reload
+  ansible.builtin.systemd_service:
+    daemon_reload: true
