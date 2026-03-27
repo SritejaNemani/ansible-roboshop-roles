@@ -1,17 +1,17 @@
 - name: app setup
   ansible.builtin.import_role:
-  name: common
-  tasks_from: app-setup.yaml
+    name: common
+    tasks_from: app-setup.yaml
 
 - name: systemd setup
   ansible.builtin.import_role:
-  name: common
-  tasks_from: systemd-setup.yaml
+    name: common
+    tasks_from: systemd-setup.yaml
 
 - name: java setup
   ansible.builtin.import_role:
-  name: common
-  tasks_from: java-setup.yaml
+    name: common
+    tasks_from: java-setup.yaml
 
 - name: install mysql 
   ansible.builtin.dnf: 
