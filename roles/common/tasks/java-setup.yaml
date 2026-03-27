@@ -1,0 +1,11 @@
+
+- name: install maven 
+  ansible.builtin.dnf: 
+    name: maven 
+    state: present
+ 
+
+- name: instal ldependencies
+  ansible.builtin.command: mvn clean package
+  args: 
+    chdir: /app

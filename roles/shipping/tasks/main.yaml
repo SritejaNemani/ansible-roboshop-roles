@@ -8,18 +8,15 @@
   name: common
   tasks_from: systemd-setup.yaml
 
-- name: install maven and mysql
-  ansible.builtin.dnf: 
-    name: "{{ item }}" 
-    state: present
-  loop:
-  - maven
-  - mysql
+- name: java setup
+  ansible.builtin.import_role:
+  name: common
+  tasks_from: java-setup.yaml
 
-- name: instal ldependencies
-  ansible.builtin.command: mvn clean package
-  args: 
-    chdir: /app
+- name: install mysql 
+  ansible.builtin.dnf: 
+    name: mysql 
+    state: present
 
 - name: rename
   ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
