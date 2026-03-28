@@ -2,7 +2,7 @@ plugin: amazon.aws.aws_ec2
 regions:
 - us-east-1     # gives all the ec2 instances in us-east
 hostnames: 
-- private-ip-private_ip_address
+- private_ip_address
 filters: 
   instance-state-name: running
   tag:Name: ansible 
