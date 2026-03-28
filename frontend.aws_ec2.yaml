@@ -14,4 +14,4 @@ compose:
 
 keyed_groups: 
 - seperator: ''
-  key: ansible
+  key: tags.Component
