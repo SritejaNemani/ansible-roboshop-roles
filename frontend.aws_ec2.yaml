@@ -3,6 +3,11 @@ regions:
 - us-east-1     # gives all the ec2 instances in us-east
 hostnames: 
 - private-ip-address
+
 filters: 
   instance-state-name: running
   tag:Name: ansible 
+
+keyed_groups: 
+- prefix: ""
+  key: ansible
